@@ -1,0 +1,15 @@
+// TODO: 
+
+<!-- 1. load rooms from the database and display on the home page(html: Home), images and description don't load properly -->
+<!-- images and description don't load properly - 1 -->
+<!-- 2. when 'book now' on room card is clicked, it should redirect to online booking page -->
+<!-- 3. add availability filter -->
+4. add user(customer for online booking)
+5. our awesome service. (???)
+<!-- 6. booking page - load the actual room. -->
+
+7. admin dashboard - make some changes....
+8. for online booking, see if i can change the image.
+9. if room is already occupied, then don't allow reservation.
+
+<!-- 10 online booking needs a add_room-pk -->

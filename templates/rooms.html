@@ -1,0 +1,45 @@
+{%extends 'allinclude.html'%}
+{%load static%}
+
+  {% block contant %}
+<!--================EXPLOR OUR ROOMS=================-->
+<section id="OUR_ROOMS">
+  <div class="container">
+      <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+              <div class="ROOMS_Title">
+                  <h2>EXPLOR OUR ROOMS</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+              </div>
+          </div>
+      </div>
+      <div class="ROOMS_info d-flex flex-wrap">
+          {% for room in rooms %}
+          <div class="col-lg-4 mb-4">
+              <div class="rooms-view">
+                  <div class="ROOMS_pic">
+                      <img src={{room.Room_Image.url}} alt="img">
+                      <div class="btn ">
+                          <div class="room_btn">
+
+                              <a href="{% url 'room_booking' room.Id %}" class="book-now-btn">Book Now</a>
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="ROOMS_text text-center justify-content-center">
+                      <h3>{{room.Room_Type}}</h3>
+                      <span><i class="fas fa-dollar-sign"></i>{{room.Room_Price}}</span>
+                      <div class="description">
+                          <!-- <p>{{room.Room_Description}}</p> -->
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                      </div>
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</section>
+{% endblock %}
