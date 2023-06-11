@@ -9,7 +9,7 @@
     <h3>Online Booking</h3>
     <div class="ROOMS_text text-center justify-content-center">
       <div class="room-image">
-        <img src="{{ room.Room_Image.url }}" alt="{{ room.Room_Number }}" style="width: 500px; height: 400px;">
+        <img src="{{room.image_url|default_if_none:'#'}}" alt="{{ room.Room_Number }}" style="width: 500px; height: 400px;">
       </div>
       <div class="BOOKING_from_info">
         <h3>{{ room.Room_Type }}</h3>

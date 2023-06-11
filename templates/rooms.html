@@ -18,7 +18,7 @@
           <div class="col-lg-4 mb-4">
               <div class="rooms-view">
                   <div class="ROOMS_pic">
-                      <img src={{room.Room_Image.url}} alt="img">
+                    <img src="{{room.image_url|default_if_none:'#'}}" alt="img">
                       <div class="btn ">
                           <div class="room_btn">
 

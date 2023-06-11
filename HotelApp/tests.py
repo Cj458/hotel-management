@@ -24,22 +24,26 @@ class RoomBookingTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'occupied.html')
 
+    print('Test starts now')
+
     def test_room_booking_submit(self):
         # Submit the booking form
         response = self.client.post(reverse('room_booking', args=[self.room.Id]), {
-            'Check_in': '2023.05.20',
-            'Check_out': '2023.5.25',
+            'Check-in': '20/5/2023',
+            'Check-out': '25/5/2023',
             'ADULT': 2,
-            'CHILDREN': 2,
+            'Children': 2,
             'Name': 'John',
             'Surname': 'Doe',
             'Email': 'john@example.com',
-            'Phone_Number': '456789',
+            'Phone Number': '456789',
             'City': 'New York',
             'Country': 'USA',
-            'Nid_No': '123456789',
+            'NID No': '123456789',
             'Address': '123 Main St',
         })
+
+        print(response)
 
         # Ensure the booking is saved and success page is rendered
         self.assertEqual(response.status_code, 200)

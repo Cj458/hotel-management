@@ -19,8 +19,8 @@ class Authorregis(models.Model):
 class Online_Booking(models.Model):
     Id = models.AutoField(primary_key=True)
     room = models.ForeignKey('Add_Room', on_delete=models.CASCADE)
-    Check_in = models.CharField(max_length=255)
-    Check_out = models.CharField(max_length=255)
+    Check_in = models.CharField(max_length=255, null=True)
+    Check_out = models.CharField(max_length=255, null=True)
     ADULT = models.CharField(max_length=255)
     CHILDREN = models.CharField(max_length=255)
     Name = models.CharField(max_length=255)
@@ -104,6 +104,12 @@ class Add_Room(models.Model):
     Room_Description = models.CharField(max_length=500, default='description')
     Date = models.DateField(auto_now_add=True)
     Time = models.TimeField(auto_now_add=True)
+
+    @property
+    def image_url(self):
+        if self.Room_Image and hasattr(self.Room_Image, 'url'):
+          return self.Room_Image.url
+    
     def __str__(self):
         return self.Room_Number
     class Meta:

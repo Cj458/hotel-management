@@ -172,7 +172,8 @@
                      <div class="ROOMS_pic">
 
                        <!-- <img src="{%static 'Allfiles/Photo/room-4.jpg'%}" alt="img"> -->
-                       <img src={{room.Room_Image.url}} alt="img">
+                       
+                       <img src="{{room.image_url|default_if_none:'#'}}" alt="img">
                        <div class="btn ">
                           <div class="room_btn">
                             <a href="{% url 'room_booking' room.Id %}">Book Now</a>
