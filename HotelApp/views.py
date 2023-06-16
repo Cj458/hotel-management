@@ -90,6 +90,8 @@ def OnlineBooking(request):
     return render(request,'online_booking_page.html')
 
 #==========================================
+
+
 def room_booking(request, room_id):
     room = get_object_or_404(Add_Room, Id=room_id)
     occupied = models.Online_Booking.objects.filter(room=room).exists()
@@ -144,6 +146,9 @@ def room_booking(request, room_id):
     room = Add_Room.objects.get(pk=room_id)
     return render(request, 'booking.html', {'room': room})
 
+def contact(request):
+
+    return render(request, 'contact.html')
 
 def about(request):
     return render(request, 'about.html')

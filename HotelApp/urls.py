@@ -7,6 +7,7 @@ urlpatterns = [
     path('OnlineBooking', views.OnlineBooking, name='OnlineBooking'),
     path('rooms', views.rooms, name='rooms'),
     path('about', views.about, name='about'),
+    path('contact', views.contact, name='contact'),
     path('available/<str:check_in>/<str:check_out>/', views.check_availability, name='available'),
     # path('checking', views.check, name='checking'),
     path('booking/<int:room_id>/', views.room_booking, name='room_booking'),
@@ -39,5 +40,6 @@ urlpatterns = [
     path('All_Room', views.All_Room, name='All_Room'),
     path('AllRooms_Delete/<id>', views.AllRooms_Delete, name='AllRooms_Delete'),
     path('AddEmployeeSalary', views.AddEmployeeSalary, name='AddEmployeeSalary'),
-    path('EmployeeShow', views.EmployeeShow, name='EmployeeShow')
+    path('EmployeeShow', views.EmployeeShow, name='EmployeeShow'),
+
 ]

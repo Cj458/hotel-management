@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+# from django.conf.urls import url
 from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('HotelApp.urls'))
+    path('', include('HotelApp.urls')),
+    # url(r'^', include('yourapp.routing.websocket_urlpatterns')),
 
 ]
 if settings.DEBUG:
